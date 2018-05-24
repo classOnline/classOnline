@@ -1,0 +1,8 @@
+{
+  "name": "classOnline",
+  "app_id": "84a30b46",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
