@@ -1,0 +1,14 @@
+<ion-content padding id="login">
+
+       
+        <ion-item class="listItem" style="    ">
+          <ion-label floating>username</ion-label>
+          <ion-input #unInput></ion-input>
+        </ion-item>
+      
+        <ion-item class="listItem">
+            <ion-label   floating>password</ion-label>
+            <ion-input #pwdInput type="password"></ion-input>
+        </ion-item> 
+        <button ion-button block  outline (click) = "login(unInput.value,pwdInput.value)">Login</button>
+</ion-content>
