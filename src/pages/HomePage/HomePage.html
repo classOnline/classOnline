@@ -1,17 +1,19 @@
 <ion-menu [content]="content">
 
-    <ion-content id = "menuContent">
+    <ion-content id="menuContent">
         <ion-list>
             <ion-item>
                 <ion-thumbnail item-start>
-                    <img src="../../assets/imgs/loginBackground.png">
+                    <img [src]="imgUrl">
                 </ion-thumbnail>
                 <h2>{{userName}}</h2>
             </ion-item>
             <ion-item>
-                <button clear ion-button (click)="logOut()">
-                    <ion-icon name="md-exit"></ion-icon>
-                </button>
+                <ion-list>
+                    <button clear ion-button (click)="logOut()">
+                        <ion-icon name="md-exit"></ion-icon>
+                    </button>
+                </ion-list>
             </ion-item>
         </ion-list>
     </ion-content>

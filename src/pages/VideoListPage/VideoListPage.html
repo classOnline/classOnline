@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button (click)="backTo()">
+        <span ion-text color="primary">Cancel</span>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      class video list
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="toClassStruct()">
+        <ion-icon name="md-reorder" showWhen="android, windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content class="" >
+  <ion-searchbar (ionInput)="ionInput($event)"></ion-searchbar>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngFor="let videoItem of videoList">
+    <ion-card>
+      <ion-item>
+        <h2>{{videoItem.name}}</h2>
+      </ion-item>
+      <ion-card-content (click)="toVideoDetailPage(videoItem)">
+        <img src="{{baseImgUrl+videoItem.shortcut}}" />
+        <ion-icon name='md-arrow-dropright-circle'></ion-icon>
+      </ion-card-content>
+      <ion-row>
+        <ion-col>
+          <button ion-button color="primary" clear small icon-start>
+            <ion-icon name='thumbs-up'></ion-icon>
+            {{videoItem.stars}} like
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button color="primary" clear small icon-start (click)="toVideoDetailPage(videoItem)">
+            <ion-icon name='text'></ion-icon>
+            {{videoItem.videoCommentsId.length}} Comments
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+</ion-content>

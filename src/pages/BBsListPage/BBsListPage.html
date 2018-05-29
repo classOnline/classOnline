@@ -6,12 +6,19 @@
 
 
 <ion-content class="cards-bg social-cards">
-   
-    <ion-card>
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+
+    <ion-fab right>
+        <button ion-fab  (click) = "editNote()"><ion-icon name="md-create"></ion-icon></button>
+      </ion-fab>
+    <ion-card (click)="toCommentListPage()">
     
       <ion-item>
         <ion-avatar item-start>
-          <img src="../../assets/imgs/marty-avatar.png">
+          <img src="./assets/imgs/marty-avatar.png">
         </ion-avatar>
         <h2>Marty McFly</h2>
         <p>November 5, 1955</p>
@@ -22,7 +29,11 @@
       <ion-card-content>
         <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that database is so difficult to learn?...</p>
       </ion-card-content>
-    
+      <ion-row class="subjectRow">
+          <ion-col>
+              <span class="subject">#learning#</span>
+          </ion-col>
+      </ion-row>
       <ion-row>
         <ion-col>
           <button ion-button color="primary" clear small icon-start>
@@ -50,13 +61,13 @@
     
       <ion-item>
         <ion-avatar item-start>
-          <img src="../../assets/imgs/sarah-avatar.png.jpeg">
+          <img src="./assets/imgs/sarah-avatar.png.jpeg">
         </ion-avatar>
         <h2>Sarah Connor</h2>
         <p>May 12, 1984</p>
       </ion-item>
     
-      <img src="../../assets/imgs/advance-card-tmntr.jpg">
+      <img src="./assets/imgs/advance-card-tmntr.jpg">
     
       <ion-card-content>
         <p>I face the unknown future, with a sense of hope. Because if a machine, a Terminator, can learn the value of human life, maybe we can too.</p>
@@ -89,13 +100,13 @@
     
       <ion-item>
         <ion-avatar item-start>
-          <img src="../../assets/imgs/ian-avatar.png">
+          <img src="./assets/imgs/ian-avatar.png">
         </ion-avatar>
         <h2>Dr. Ian Malcolm</h2>
         <p>June 28, 1990</p>
       </ion-item>
     
-      <img src="../../assets/imgs/advance-card-jp.jpg">
+      <img src="./assets/imgs/advance-card-jp.jpg">
     
       <ion-card-content>
         <p>Your scientists were so preoccupied with whether or not they could, that they didn't stop to think if they should.</p>

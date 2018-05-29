@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar>
+      <ion-buttons start>
+        <button ion-button (click)="dismiss()">
+          <span ion-text color="primary" showWhen="ios">Cancel</span>
+         
+        </button>
+      </ion-buttons>
+      <ion-title>
+        Write Comment
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content>
+    <form (ngSubmit)="logForm()">
+      <ion-item>
+        <ion-label>Re:title</ion-label>
+        <ion-input type="text" name="title" disabled></ion-input>
+      </ion-item>
+      <ion-textarea aria-multiline="true" name="your mind"></ion-textarea>
+      <button ion-button type="submit" style="height:3em;" block>submit</button>
+    </form>
+  </ion-content>

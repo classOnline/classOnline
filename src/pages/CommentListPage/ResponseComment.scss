@@ -1,4 +1,4 @@
-comment-listpage {
+response-comment {
     .subject{
         float: right;
          border-radius: 0.1em;
@@ -14,6 +14,19 @@ comment-listpage {
    
 
      }
+     
+    ion-textarea{
+        height: 60vh;
+        width: 100%;
+        padding: 5;
+        font-size: 1.5em;
+        background-color: aliceblue;
+        border-radius: 1em;
+
+        
+
+    }
+
      .commitContent p{
         text-align: left;
         margin-left: 10vw;

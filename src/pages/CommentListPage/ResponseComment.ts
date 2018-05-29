@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {ResponseComment} from '../CommentListPage/ResponseComment'
 
 @Component({
-  selector: 'comment-listpage',
-  templateUrl: 'CommentListPage.html'
+  selector: 'response-comment',
+  templateUrl: 'ResponseComment.html'
 })
-export class CommentListPage {
+export class ResponseComment {
 
   constructor(public navCtrl: NavController) {
 
@@ -17,17 +16,13 @@ export class CommentListPage {
       event.complete();
     }, 2000);
   }
-  writeCommit(){
-    this.navCtrl.push(ResponseComment)
 
-
-  }
   dismiss(){
 
     this.navCtrl.pop();
   }
-  commentTo(){
-    this.navCtrl.push(ResponseComment)
-
+  logForm(){
+    this.navCtrl.pop();
   }
+
 }

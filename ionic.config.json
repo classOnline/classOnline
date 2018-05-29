@@ -4,5 +4,41 @@
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "proxies": [
+    {
+      "path": "/users/login",
+      "proxyUrl": "http://localhost:3000/users/login"
+    },
+    {
+      "path": "/users/register",
+      "proxyUrl": "http://localhost:3000/users/register"
+    },
+    {
+      "path": "/class/getAllClassList",
+      "proxyUrl": "http://localhost:3000/class/getAllClassList"
+    },
+    {
+      "path": "/class/getClassStruct",
+      "proxyUrl": "http://localhost:3000/class/getClassStruct"
+    },
+    {
+      "path": "/class/getVideoDetails",
+      "proxyUrl": "http://localhost:3000/class/getVideoDetails"
+    },
+    {
+      "path": "/class/searchVideos",
+      "proxyUrl": "http://localhost:3000/class/searchVideos"
+    },
+    {
+      "path": "/class/commentToVideo",
+      "proxyUrl": "http://localhost:3000/class/commentToVideo"
+    },
+    {
+      "path": "/public/*",
+      "proxyUrl": "http://localhost:3000/"
+    }
+
+     
+  ]
 }

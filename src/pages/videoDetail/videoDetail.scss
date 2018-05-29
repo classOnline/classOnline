@@ -1,0 +1,58 @@
+video-detail {
+    .contentDiv{
+        width: 100vw;
+        height: 40vh;
+   
+        border-radius: 1.5em;
+        background-color: darksalmon; 
+     
+        text-align: center;
+    }
+    .contentDiv vg-player{
+        width: 100%;
+
+    }
+   .videocam {
+   
+    font-size: 4em;
+     width: 30vw;
+     height: 30vw;
+     color: white;
+     margin-top: 10vh;
+
+     
+
+   }
+
+
+   .starsAndViews ion-icon{
+    font-size: 5vh;
+    
+    }
+   .starsAndViews button:first-child{
+        float: left;
+    
+   }
+   .starsAndViews button:last-child{
+        float: right;
+    }
+    .starsAndViews{
+        display:inline;
+        border-bottom-color: sandybrown;
+        border-color: aquamarine;
+        border-bottom-width: 1vh;
+        border-bottom-style: dashed;
+        background-color: black;
+        
+    }
+    ion-card{
+        margin-top: 10vh;
+        border-width: 0;
+        
+
+    }
+    hr{
+        border-color: black;
+        border: 10vh;
+    }
+}

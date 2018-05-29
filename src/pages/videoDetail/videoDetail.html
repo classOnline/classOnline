@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button (click)="backTo()">
+        <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      video
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-fab right bottom>
+    <button ion-fab (click)="writeCommit()">
+      <ion-icon name="md-create"></ion-icon>
+    </button>
+  </ion-fab>
+  <div class="contentDiv">
+    <vg-player>
+      <vg-controls>
+        <vg-play-pause></vg-play-pause>
+
+        <vg-scrub-bar>
+          <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+          <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+        </vg-scrub-bar>
+
+        <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+
+        <vg-mute></vg-mute>
+
+        <vg-fullscreen></vg-fullscreen>
+      </vg-controls>
+
+      <video [vgMedia]="master" #master [vgMaster]="true" id="masterVideo" preload="auto">
+        <source src="{{thisVide.url}}" type="video/mp4">
+      </video>
+    </vg-player>
+  </div>
+
+  <div class="starsAndViews">
+    <button ion-button clear small icon-start>
+
+      <ion-icon name="md-thumbs-up" showWhen="android, windows"></ion-icon>
+      {{thisVide.stars}} Likes
+    </button>
+    <button ion-button clear small icon-end>
+      {{thisVide.views}} views
+      <ion-icon name="md-eye" showWhen="android, windows"></ion-icon>
+    </button>
+  </div>
+<div *ngFor="let comment of thisVideo.videoCommentsId">
+
+  <ion-card>
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="{{comment.UserId.imgUrl}}">
+      </ion-avatar>
+      <h2>{{comment.UserId.userName}}</h2>
+      <p>November 5, 1955</p>
+    </ion-item>
+
+
+
+    <ion-card-content>
+      <p>{{comment.des}}</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-start>
+          <ion-icon name='thumbs-up'></ion-icon>
+          {{comment.stars}} Likes
+        </button>
+      </ion-col>
+
+
+    </ion-row>
+
+  </ion-card>
+
+</div>
+  
+</ion-content>

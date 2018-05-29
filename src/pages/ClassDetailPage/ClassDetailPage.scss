@@ -1,0 +1,29 @@
+class-detail {
+  .listContent{
+
+  ion-list-header{
+    background-color: rgb(241, 176, 55);
+    text-align: left;
+    line-height: 5vh;
+    font-size: 1.5em;
+    width: 100vw;
+    color: white;
+    border-radius: 0.1em;
+
+
+  }
+ 
+ 
+
+  ion-item{
+      background-color: chocolate;
+      margin-left: 5vw;
+      margin-right: 5vw;
+      margin-top: -1vh;
+      width: 90vw;
+      color: white;
+      border-radius: 0.3em;
+
+  }
+  }
+}

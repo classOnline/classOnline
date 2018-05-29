@@ -1,34 +1,8 @@
+<ion-content class='card-background-page' *ngFor="let clas of classList">
+  <ion-card (click)="toClassVieoList(clas._id)">
+    <img src="{{baseImgUrl+clas.imgUrl}}" />
+    <div class="card-title">{{clas.name}}</div>
+    <div class="card-subtitle">{{clas.videos}} videos</div>
+  </ion-card>
 
-
-<ion-content class= 'card-background-page' >
-    <ion-card>
-        <img src="../../assets/imgs/card-saopaolo.png"/>
-        <div class="card-title">C language</div>
-        <div class="card-subtitle">14 videos</div>
-      </ion-card>
-    
-      <ion-card>
-        <img src="../../assets/imgs/card-amsterdam.png"/>
-        <div class="card-title">Database</div>
-        <div class="card-subtitle">12 videos</div>
-      </ion-card>
-    
-      <ion-card>
-        <img src="../../assets/imgs/card-sf.png"/>
-        <div class="card-title">java</div>
-        <div class="card-subtitle">6 vieos</div>
-      </ion-card>
-    
-      <ion-card>
-        <img src="../../assets/imgs/card-madison.png"/>
-        <div class="card-title">DataStruct</div>
-        <div class="card-subtitle">15 videos</div>
-    </ion-card>
-
-       
-    <ion-card>
-        <img src="../../assets/imgs/card-portland.png"/>
-        <div class="card-title">OOP</div>
-        <div class="card-subtitle">7 videos</div>
-    </ion-card>
 </ion-content>

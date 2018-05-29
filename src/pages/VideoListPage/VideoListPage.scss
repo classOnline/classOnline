@@ -1,4 +1,4 @@
-bbs-listpage {
+video-listpage {
     .social-cards ion-col {
         padding: 0;
       }
@@ -7,6 +7,7 @@ bbs-listpage {
            
 
       }
+     
       .subject{
          float: right;
           border-radius: 0.1em;
@@ -22,4 +23,13 @@ bbs-listpage {
     
 
       }
+      ion-card-content ion-icon{
+          position: absolute;
+          left: 45%;
+          font-size: 3em;
+          top: 33%;
+          color: rgba(29, 221, 255, 0.562);
+
+      }
+
 }

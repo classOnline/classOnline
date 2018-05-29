@@ -1,0 +1,43 @@
+pro-viewpage {
+  .listContent{
+
+  ion-list-header{
+    background-color: rgb(241, 176, 55);
+    text-align: left;
+    line-height: 1vh;
+    font-size: 1.5em;
+    width: 100vw;
+    color: white;
+    border-radius: 0.1em;
+
+
+  }
+ 
+  ion-list-header button{
+    background-color: rgb(241, 176, 55);
+    margin-left: 30vw;
+    width: 20vw;
+    height: 20vw;
+    color: white;
+    
+ 
+
+  }
+  ion-list-header button ion-icon{
+    font-size: 2.5em;
+    
+ 
+
+  }
+  ion-item{
+      background-color: chocolate;
+      margin-left: 5vw;
+      margin-right: 5vw;
+      margin-top: -1vh;
+      width: 90vw;
+      color: white;
+      border-radius: 0.3em;
+
+  }
+  }
+}
