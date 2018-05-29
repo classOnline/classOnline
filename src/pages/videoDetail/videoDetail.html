@@ -38,7 +38,7 @@
       </vg-controls>
 
       <video [vgMedia]="master" #master [vgMaster]="true" id="masterVideo" preload="auto">
-        <source src="{{thisVide.url}}" type="video/mp4">
+        <source src="{{baseImgUrl+thisVideo.url}}" type="video/mp4">
       </video>
     </vg-player>
   </div>
@@ -47,10 +47,10 @@
     <button ion-button clear small icon-start>
 
       <ion-icon name="md-thumbs-up" showWhen="android, windows"></ion-icon>
-      {{thisVide.stars}} Likes
+      {{thisVideo.stars}} Likes
     </button>
     <button ion-button clear small icon-end>
-      {{thisVide.views}} views
+      {{thisVideo.views}} views
       <ion-icon name="md-eye" showWhen="android, windows"></ion-icon>
     </button>
   </div>
@@ -60,9 +60,9 @@
 
     <ion-item>
       <ion-avatar item-start>
-        <img src="{{comment.UserId.imgUrl}}">
+        <img src="{{comment.userId.imgUrl}}">
       </ion-avatar>
-      <h2>{{comment.UserId.userName}}</h2>
+      <h2>{{comment.userId.userName}}</h2>
       <p>November 5, 1955</p>
     </ion-item>
 

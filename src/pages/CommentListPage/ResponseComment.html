@@ -12,12 +12,11 @@
     </ion-navbar>
   </ion-header>
   <ion-content>
-    <form (ngSubmit)="logForm()">
-      <ion-item>
-        <ion-label>Re:title</ion-label>
+    <form (ngSubmit)="logForm(textArea.value)">
+      <ion-item>   
         <ion-input type="text" name="title" disabled></ion-input>
       </ion-item>
-      <ion-textarea aria-multiline="true" name="your mind"></ion-textarea>
+      <ion-textarea #textArea aria-multiline="true" name="des"></ion-textarea>
       <button ion-button type="submit" style="height:3em;" block>submit</button>
     </form>
   </ion-content>

@@ -140,7 +140,9 @@ export class PopoverPage {
 export class ProViewPage {
   @ViewChild('popoverContent', { read: ElementRef }) content: ElementRef;
   @ViewChild('popoverText', { read: ElementRef }) text: ElementRef;
-  constructor(private popoverCtrl: PopoverController,public navCtrl:NavController) {
+  des:any
+  constructor(private popoverCtrl: PopoverController,public navCtrl:NavController,public navParams:NavParams) {
+   this.des= navParams.data
   }
 
   presentPopover(ev) {
@@ -151,6 +153,7 @@ export class ProViewPage {
     popover.present({
       ev: ev
     });
+    
   }
   backTo() {
     this.navCtrl.pop();

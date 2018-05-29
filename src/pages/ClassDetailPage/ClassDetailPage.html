@@ -12,21 +12,18 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="listContent">
+<ion-content class="listContent" *ngFor="let chapter of chapters" >
   <ion-list no-border>
 
     <ion-list-header>
-      1.first chapter
+      {{chapter.name}}
     </ion-list-header>
-    <ion-item (click) = "toProverPage()">
-      <ion-icon name='planet' item-start></ion-icon>
-      1.1 first subChapter
-    </ion-item>
-
-    
-
-
-
+    <div *ngFor="let subChapter of chapter.subChapters">
+      <ion-item (click) = "toProverPage(subChapter.des)">
+        <ion-icon name='planet' item-start></ion-icon>
+        {{subChapter.name}}
+      </ion-item>
+    </div>
   </ion-list>
  
 </ion-content>
