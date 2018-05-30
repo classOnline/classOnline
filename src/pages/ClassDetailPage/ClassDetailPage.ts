@@ -13,24 +13,38 @@ export class ClassDetailPage {
   chapters=[];
   constructor(public navCtrl: NavController, public http: HttpClient, public navParams: NavParams, public alertCtrl: AlertController,) {
     this.classId = this.navParams.data.classId;
+    this.getFetCh();
   }
   backTo(){
     this.navCtrl.pop();
 
   }
-  fetch(){
+  getFetCh(){
     this.http.post(URL_path.class.getClassStruct, {
       classId: this.classId
     }, {
         headers: jsonHeader
       }).toPromise().then((res: any) => {
         if (res.result == true) {
+          console.log(res);
           this.chapters = res.classStruct.chapters;
           this.classStruct = res.classStruct;
+        }else{
+          let alert = this.alertCtrl.create({
+            title: 'Ops',
+            subTitle:'can not get any response',
+            buttons: ['OK'],
+          });
+          alert.present();
         }
-      }).catch(() => {
+      }).catch((error:Error) => {
         //别做什么
-
+        let alert = this.alertCtrl.create({
+          title: 'Ops',
+          subTitle:error.message,
+          buttons: ['OK'],
+        });
+        alert.present();
       });
 
 
