@@ -3,6 +3,7 @@ const baseUrl = "/";
 export const baseImgUrl = "http://10.209.8.116:3000/";//可以跨域
 const baseClassUrl = baseUrl + "class/";
 const baseUserUrl = baseUrl + "users/";
+const baseBbsUrl = baseUrl + "bbs/";
 export const URL_path = {
     class: {
         getAllClassList: baseClassUrl + "getAllClassList/",
@@ -10,6 +11,14 @@ export const URL_path = {
         getVideoDetails: baseClassUrl + "getVideoDetails/",
         searchVideos:baseClassUrl+"searchVideos/",
         commentToVideo:baseClassUrl+"commentToVideo",
+
+
+        submitNote:baseBbsUrl+"submitNote/",
+        commentToNote:baseBbsUrl+"commentToNote/",
+        insertSubject:baseBbsUrl+"insertSubject/",
+        searchSubjects:baseBbsUrl+"searchSubjects/",
+        getNoteDetail:baseBbsUrl+"getNoteDetail/",
+        searchNoteList:baseBbsUrl+"searchNoteList/",
     },
     user: {
         login: baseUserUrl + "login/",

@@ -24,7 +24,6 @@ import { IonicApp, IonicModule, IonicErrorHandler, IonicPage,IonicPageModule } f
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-
   ]
 })
 export class VideoListPageModule {

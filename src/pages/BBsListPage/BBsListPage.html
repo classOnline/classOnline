@@ -5,46 +5,50 @@
 </ion-header>
 
 
+
 <ion-content class="cards-bg social-cards">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
-    <ion-refresher (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content></ion-refresher-content>
-      </ion-refresher>
+  <ion-fab right>
+    <button ion-fab (click)="editNote()">
+      <ion-icon name="md-create"></ion-icon>
+    </button>
+  </ion-fab>
 
-    <ion-fab right>
-        <button ion-fab  (click) = "editNote()"><ion-icon name="md-create"></ion-icon></button>
-      </ion-fab>
-    <ion-card (click)="toCommentListPage()">
-    
+  <div style="display: block" *ngFor="let thisNote of this.noteList" >
+    <ion-card (click)="toCommentListPage(thisNote)" >
       <ion-item>
         <ion-avatar item-start>
-          <img src="./assets/imgs/marty-avatar.png">
+          <img src="{{baseImgUrl+thisNote.userId.imgUrl}}">
         </ion-avatar>
-        <h2>Marty McFly</h2>
-        <p>November 5, 1955</p>
+        <h2>{{baseImgUrl+thisNote.userId.userName}}</h2>
       </ion-item>
-    
-     
-    
+      <ion-item>
+
+        <h2>{{thisNote.title}}</h2>
+      </ion-item>
       <ion-card-content>
-        <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that database is so difficult to learn?...</p>
-      </ion-card-content>
-      <ion-row class="subjectRow">
-          <ion-col>
-              <span class="subject">#learning#</span>
-          </ion-col>
+        <p>{{thisNote.des}}</p>
+
+    </ion-card-content>
+      <ion-row class="subjectRow" *ngFor="let thisSubject of thisNote.subject">
+        <ion-col>
+          <span class="subject">#{{thisSubject.name}}#</span>
+        </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
           <button ion-button color="primary" clear small icon-start>
             <ion-icon name='thumbs-up'></ion-icon>
-            12 Likes
+            {{thisNote.stars}} Likes
           </button>
         </ion-col>
         <ion-col>
           <button ion-button color="primary" clear small icon-start>
             <ion-icon name='text'></ion-icon>
-            4 Comments
+            {{thisNote.commentList.length}} Comments
           </button>
         </ion-col>
         <ion-col align-self-center text-center>
@@ -53,11 +57,20 @@
           </ion-note>
         </ion-col>
       </ion-row>
-    
     </ion-card>
     
-    
-    <ion-card>
+
+  </div>
+
+
+
+  
+
+
+</ion-content>
+
+
+    <!-- <ion-card >
     
       <ion-item>
         <ion-avatar item-start>
@@ -133,7 +146,4 @@
       </ion-row>
     
     </ion-card>
-    
-    
-    </ion-content>
-    
+ -->

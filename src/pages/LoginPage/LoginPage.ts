@@ -32,7 +32,6 @@ export class LoginPage {
       this.http.post(URL_path.user.login, {
         userName: uname,
         password: pwd
-
       },{
         headers:
         jsonHeader
@@ -125,7 +124,15 @@ export class RegisterPage {
   }
   registerClick(username, password1, password2) {
     //确定注册
-    if (password1 !== password2) {
+    if (username.trim() === "" || password1.trim() === "" || password2.trim() === "" || this.imgIndex  === -1) {
+      let alert = this.alertCtrl.create({
+        title: 'Opss',
+        subTitle: 'username and password cannot be empty!',
+        buttons: ['OK'],
+      });
+      alert.present();
+    }
+    else if (password1 !== password2) {
       let alert = this.alertCtrl.create({
         title: 'Ops',
         subTitle: 'passwords are not  consistent ',
@@ -168,7 +175,7 @@ export class RegisterPage {
       if (data.result === false) {
         let alert = this.alertCtrl.create({
           title: 'Ops',
-          subTitle: 'username and password are incorrent!',
+          subTitle: data.des,
           buttons: ['OK'],
         });
         alert.present();

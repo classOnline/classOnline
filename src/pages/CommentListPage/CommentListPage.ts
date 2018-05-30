@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,NavParams } from 'ionic-angular';
 import {ResponseComment} from '../CommentListPage/ResponseComment'
 
 @Component({
@@ -7,9 +7,9 @@ import {ResponseComment} from '../CommentListPage/ResponseComment'
   templateUrl: 'CommentListPage.html'
 })
 export class CommentListPage {
-
-  constructor(public navCtrl: NavController) {
-
+  thisNode:any;
+  constructor(public navCtrl: NavController,public navParams:NavParams) {
+    this.thisNode = this.navParams.data;
   }
   doRefresh(event){
     setTimeout(() => {

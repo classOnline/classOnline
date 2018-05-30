@@ -37,6 +37,30 @@
     {
       "path": "/public/*",
       "proxyUrl": "http://localhost:3000/"
+    },
+    {
+      "path": "/bbs/submitNote",
+      "proxyUrl": "http://localhost:3000/bbs/submitNote"
+    },
+    {
+      "path": "/bbs/commentToNote",
+      "proxyUrl": "http://localhost:3000/bbs/commentToNote"
+    },
+    {
+      "path": "/bbs/insertSubject",
+      "proxyUrl": "http://localhost:3000/bbs/insertSubject"
+    },
+    {
+      "path": "/bbs/searchSubjects",
+      "proxyUrl": "http://localhost:3000/bbs/searchSubjects"
+    },
+    {
+      "path": "/bbs/getNoteDetail",
+      "proxyUrl": "http://localhost:3000/bbs/getNoteDetail"
+    },
+    {
+      "path": "/bbs/searchNoteList",
+      "proxyUrl": "http://localhost:3000/bbs/searchNoteList"
     }
 
      
