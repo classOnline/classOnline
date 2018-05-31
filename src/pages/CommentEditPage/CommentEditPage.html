@@ -15,7 +15,7 @@
   <form (ngSubmit)="logForm()">
     <ion-item>
       <ion-label>title</ion-label>
-      <ion-input type="text" name="title"></ion-input>
+      <ion-input [(ngModel)] = "text"  type="text" name="title" [(ngModel)]="note.title"></ion-input>
     </ion-item>
 
     <ion-item (click)="chooseSubject()">
@@ -25,7 +25,7 @@
     </ion-item>
 
 
-    <ion-textarea aria-multiline="true" name="your mind"></ion-textarea>
+    <ion-textarea aria-multiline="true"   [(ngModel)]="note.des" name="your mind"></ion-textarea>
 
 
     <button ion-button type="submit" style="height:3em;" block>submit</button>

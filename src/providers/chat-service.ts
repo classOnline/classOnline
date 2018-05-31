@@ -3,66 +3,63 @@ import { Events } from 'ionic-angular';
 import { map } from 'rxjs/operators/map';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs/Observable";
-
+import { Storage } from '@ionic/storage';
+import { URL_path, jsonHeader, regUtils, baseImgUrl } from '../util/Constants'
 export class ChatMessage {
-  messageId: string;
-  userId: string;
-  userName: string;
-  userAvatar: string;
-  toUserId: string;
+  _id: string;
+  userId: {
+    _id:string;
+    userName:string;
+    imgUrl:string;
+  };
   time: number | string;
-  message: string;
-  status: string;
+  des: string;
+  imgUrl:string;
+  status:string;
 }
 
-export class UserInfo {
-  id: string;
-  name?: string;
-  avatar?: string;
-}
 
 @Injectable()
 export class ChatService {
+  userInfo:any;
+  constructor(
+    private http: HttpClient,
+    private events: Events,
+    private storage: Storage
+  ) {
 
-  constructor(private http: HttpClient,
-              private events: Events) {
+
   }
 
-  mockNewMsg(msg) {
-    const mockMsg: ChatMessage = {
-      messageId: Date.now().toString(),
-      userId: '210000198410281948',
-      userName: 'Hancock',
-      userAvatar: './assets/to-user.jpg',
-      toUserId: '140000198202211138',
-      time: Date.now(),
-      message: msg.message,
-      status: 'success'
-    };
+  getMsgList(lastId:any): Observable<ChatMessage[]> {
 
-    setTimeout(() => {
-      this.events.publish('chat:received', mockMsg, Date.now())
-    }, Math.random() * 1800)
+    return this.http.post<any>(URL_path.class.getMessageBox,{
+       lastId:lastId
+    })
+    .pipe(map(response => {
+      return  response.messageList.map((item)=>{
+          return item = {
+            ...item, //添加两个时间戳
+            time:this.getTimeStampFromObject(item._id),
+            status:"success"
+          }
+      })
+    
+    }));
+
+    
+
   }
 
-  getMsgList(): Observable<ChatMessage[]> {
-    const msgListUrl = './assets/mock/msg-list.json';
-    return this.http.get<any>(msgListUrl)
-    .pipe(map(response => response.array));
-  }
 
-  sendMsg(msg: ChatMessage) {
-    return new Promise(resolve => setTimeout(() => resolve(msg), Math.random() * 1000))
-    .then(() => this.mockNewMsg(msg));
-  }
+  getTimeStampFromObject(oid){
 
-  getUserInfo(): Promise<UserInfo> {
-    const userInfo: UserInfo = {
-      id: '140000198202211138',
-      name: 'Luff',
-      avatar: './assets/user.jpg'
-    };
-    return new Promise(resolve => resolve(userInfo));
+  
+    var _date = new Date(parseInt(oid.substring(0, 8), 16) * 1000);;
+    return _date;
   }
+ 
+
+
 
 }

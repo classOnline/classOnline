@@ -1,0 +1,67 @@
+node-commentpage {
+    .subject{
+        float: right;
+         border-radius: 0.1em;
+         font-size: 1em;
+         text-align: center;
+         margin-right: 5vw;
+         height: 2.0em;
+         color:rgb(33, 107, 245)
+     }
+     .subjectRow{
+       width: 100%;
+
+   
+
+     }
+     
+    ion-textarea{
+        height: 60vh;
+        width: 100%;
+        padding: 5;
+        font-size: 1.5em;
+        background-color: aliceblue;
+        border-radius: 1em;
+
+        
+
+    }
+
+     .commitContent p{
+        text-align: left;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        word-wrap: break-all;
+
+
+     }
+     .commitContent {
+        text-align: left;
+        margin-left: 10vw;
+       
+
+     }
+     .oneComment .iconRow{
+        display: inline;
+        width: 100%;
+
+     }
+     .iconRow ion-icon:last-child{
+            margin-right: 5vw;
+            margin-left: 30vw;
+            right:5vw;
+            color: rgb(24, 142, 252);
+        
+        font-size: 2em;
+      
+
+     }
+     .iconRow ion-icon:first-child{
+        margin-right: 30vw;
+        margin-left: 5vw;
+        left: 5vw; 
+        color: rgb(24, 142, 252);
+        font-size: 2em;
+    
+    }
+}

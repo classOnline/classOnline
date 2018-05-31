@@ -36,6 +36,8 @@ import {VgControlsModule} from 'videogular2/controls';
 import {VgOverlayPlayModule} from 'videogular2/overlay-play';
 import {VgBufferingModule} from 'videogular2/buffering';
 import {VideoListPage} from "../pages/VideoListPage/VideoListPage"
+import {NodeCommentPage} from "../pages/CommentListPage/NodeCommentPage"
+
 import {ProViewPage,PopoverPage} from "../pages/ClassDetailPage/ProViewPage"
 import {  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -59,7 +61,8 @@ import { CommonModule } from '@angular/common';
     ResponseComment,
     VideoListPage,
     ProViewPage,
-    PopoverPage
+    PopoverPage,
+    NodeCommentPage
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -106,7 +109,8 @@ import { CommonModule } from '@angular/common';
     ResponseComment,
     VideoListPage,
     ProViewPage,
-    PopoverPage
+    PopoverPage,
+    NodeCommentPage
 
   ],
   providers: [

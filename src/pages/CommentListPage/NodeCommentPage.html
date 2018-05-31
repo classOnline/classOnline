@@ -1,0 +1,27 @@
+<ion-header>
+        <ion-navbar>
+          <ion-buttons start>
+            <button ion-button (click)="dismiss()">
+              <span ion-text color="primary" showWhen="ios">Cancel</span>
+             
+            </button>
+          </ion-buttons>
+          <ion-title>
+            Write Comment
+          </ion-title>
+        </ion-navbar>
+      </ion-header>
+      <ion-content>
+        <form (ngSubmit)="logForm(textArea.value)">
+          <ion-item>   
+            <ion-label *ngIf="isUser">
+                Re:{{note.title}}  <span style="margin-left: 3em">To:{{toUser.userName}}</span>
+            </ion-label>
+            <ion-label  *ngIf="!isUser">
+                Re:{{note.title}}
+            </ion-label>
+          </ion-item>
+          <ion-textarea [(ngModel)]="des" #textArea aria-multiline="true" name="des"></ion-textarea>
+          <button ion-button type="submit" style="height:3em;" block>submit</button>
+        </form>
+      </ion-content>

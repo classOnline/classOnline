@@ -1,54 +1,38 @@
 <ion-header>
-    <ion-navbar>
-      <ion-buttons start>
-        <button ion-button (click)="dismiss()">
-          <span ion-text color="primary" showWhen="ios">Cancel</span>
-          <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
-        </button>
-      </ion-buttons>
-      <ion-title>
-        Choose subjects
-      </ion-title>
-    </ion-navbar>
-  </ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Choose subjects
+    </ion-title>
+  </ion-navbar>
+</ion-header>
 
 <ion-content>
 
   <ion-list>
     <ion-list-header>
-        subjects
+      subjects
     </ion-list-header>
 
-    <ion-item>
-      <ion-label>C language</ion-label>
-      <ion-checkbox checked="true"></ion-checkbox>
+
+
+    <ion-item *ngFor="let subject of subjectList;let i = index">
+      <ion-label>{{subject.name}}</ion-label>
+      <ion-checkbox index="{{i}}" (ionChange)="updateCucumber($event)" value="cherry"></ion-checkbox>
     </ion-item>
 
-    <ion-item>
-      <ion-label>Data base</ion-label>
-      <ion-checkbox color="dark" checked="true"></ion-checkbox>
-    </ion-item>
+
 
     <ion-item>
-      <ion-label>Data Struct</ion-label>
-      <ion-checkbox value="cherry" disabled="true"></ion-checkbox>
+      <ion-input [(ngModel)] = "subjectText" ion-input type="text" #subjectInput> </ion-input>
     </ion-item>
+    <button style="height: 3em;" ion-button block (click)="finish(1)">confurm</button>
 
-    <ion-item>
-      <ion-label>OOP</ion-label>
-      <ion-checkbox color="secondary"></ion-checkbox>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>JAVA</ion-label>
-      <ion-checkbox color="secondary"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-input type="text" placeholder="create new subject"></ion-input>
-    </ion-item>
-   
-      <button style="height: 3em;" ion-button block (click)="finish(1)">confurm</button>
- 
   </ion-list>
 
 </ion-content>

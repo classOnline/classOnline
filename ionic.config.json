@@ -61,8 +61,15 @@
     {
       "path": "/bbs/searchNoteList",
       "proxyUrl": "http://localhost:3000/bbs/searchNoteList"
+    },
+    {
+      "path": "/bbs/messageBox",
+      "proxyUrl": "http://localhost:3000/bbs/messageBox"
+    },
+    {
+      "path": "/bbs/getMessageBox",
+      "proxyUrl": "http://localhost:3000/bbs/getMessageBox"
     }
-
      
   ]
 }

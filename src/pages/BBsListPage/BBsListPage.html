@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-searchbar></ion-searchbar>
+  <ion-searchbar (ionInput)="ionInput($event)"></ion-searchbar>
 
 </ion-header>
 
@@ -10,67 +10,60 @@
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-
-  <ion-fab right>
+  <ion-fab right bottom>
     <button ion-fab (click)="editNote()">
       <ion-icon name="md-create"></ion-icon>
     </button>
   </ion-fab>
+  <ion-card *ngFor="let thisNote of notelist" (click)="toCommentListPage(thisNote)" >
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="{{thisNote.userId.imgUrl}}">
+      </ion-avatar>
+      <h2>{{thisNote.userId.userName}}</h2>
+      <h2>{{thisNote.title}}</h2>
+    </ion-item>
+    <ion-item style="text-align: center">
 
-  <div style="display: block" *ngFor="let thisNote of this.noteList" >
-    <ion-card (click)="toCommentListPage(thisNote)" >
-      <ion-item>
-        <ion-avatar item-start>
-          <img src="{{baseImgUrl+thisNote.userId.imgUrl}}">
-        </ion-avatar>
-        <h2>{{baseImgUrl+thisNote.userId.userName}}</h2>
-      </ion-item>
-      <ion-item>
-
-        <h2>{{thisNote.title}}</h2>
-      </ion-item>
-      <ion-card-content>
-        <p>{{thisNote.des}}</p>
+     
+    </ion-item>
+    <ion-card-content>
+      <p>{{thisNote.des}}</p>
 
     </ion-card-content>
-      <ion-row class="subjectRow" *ngFor="let thisSubject of thisNote.subject">
-        <ion-col>
-          <span class="subject">#{{thisSubject.name}}#</span>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <button ion-button color="primary" clear small icon-start>
-            <ion-icon name='thumbs-up'></ion-icon>
-            {{thisNote.stars}} Likes
-          </button>
-        </ion-col>
-        <ion-col>
-          <button ion-button color="primary" clear small icon-start>
-            <ion-icon name='text'></ion-icon>
-            {{thisNote.commentList.length}} Comments
-          </button>
-        </ion-col>
-        <ion-col align-self-center text-center>
-          <ion-note>
-            11h ago
-          </ion-note>
-        </ion-col>
-      </ion-row>
-    </ion-card>
-    
-
-  </div>
+    <ion-row class="subjectRow" *ngFor="let thisSubject of thisNote.subject">
+      <ion-col>
+        <span class="subject">#{{thisSubject.name}}#</span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-start>
+          <ion-icon name='thumbs-up'></ion-icon>
+          {{thisNote.stars}} Likes
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-start>
+          <ion-icon name='text'></ion-icon>
+          {{thisNote.commentList.length}} Comments
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
 
 
 
-  
+
+
+
+
 
 
 </ion-content>
 
 
-    <!-- <ion-card >
+<!-- <ion-card >
     
       <ion-item>
         <ion-avatar item-start>

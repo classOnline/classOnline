@@ -16,57 +16,55 @@
 
   <ion-item>
     <ion-avatar item-start>
-      <img src="./assets/imgs/marty-avatar.png">
+      <img src="{{note.userId.imgUrl}}">
     </ion-avatar>
-    <h2>Finn</h2>
-    <h3>Don't Know What To Do!</h3>
+    <h2>{{note.userId.userName}}</h2>
+    <h3>{{note.title}}</h3>
   </ion-item>
-  <ion-fab right>
-    <button ion-fab (click)="writeCommit()">
+  <ion-fab right bottom>
+    <button ion-fab (click)="commentTo()">
       <ion-icon name="md-create"></ion-icon>
     </button>
   </ion-fab>
   <ion-card>
   
       <ion-card-content>
-        <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that database is so difficult to learn?..hohohohhohohohohohohoh.</p>
+        <p>{{note.des}}</p>
       </ion-card-content>
       <ion-row class="subjectRow">
-        <ion-col>
-          <span class="subject">#learning#</span>
+        <ion-col *ngFor="let thesub of note.subject">
+          <span class="subject">#{{thesub.name}}#</span>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
           <button ion-button color="primary" clear small icon-start>
             <ion-icon name='thumbs-up'></ion-icon>
-            12 Likes
+            {{note.stars}} Likes
           </button>
-        </ion-col>
-        <ion-col align-self-center text-center>
-          <ion-note>
-            11h ago
-          </ion-note>
         </ion-col>
       </ion-row>
     </ion-card>
+
     <ion-list>
       <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content></ion-refresher-content>
       </ion-refresher>
-      <div class="oneComment">
+
+      <div class="oneComment" *ngFor="let comment of note.commentList">
         <ion-item>
           <ion-avatar item-start>
-            <img src="./assets/imgs/user2.png" />
+            <img src="{{comment.userId.imgUrl}}" />
           </ion-avatar>
-          <h2>test</h2>
+          <h2>{{comment.userId.userName}}</h2>
         </ion-item>
         <ion-card-content class="commitContent">
-            <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+            <p>{{comment.des}}</p>
         </ion-card-content>
+
         <ion-item class="iconRow" >
             <ion-icon name='thumbs-up'></ion-icon>
-            <ion-icon (click)="commentTo()" name='ios-text'></ion-icon>
+            <ion-icon (click)="commentTo(comment.userId)" name='ios-text'></ion-icon>
         </ion-item>
       </div>
     </ion-list>

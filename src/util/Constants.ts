@@ -19,6 +19,8 @@ export const URL_path = {
         searchSubjects:baseBbsUrl+"searchSubjects/",
         getNoteDetail:baseBbsUrl+"getNoteDetail/",
         searchNoteList:baseBbsUrl+"searchNoteList/",
+        messageBox:baseBbsUrl+"messageBox/",
+        getMessageBox:baseBbsUrl+"getMessageBox/"
     },
     user: {
         login: baseUserUrl + "login/",
@@ -26,6 +28,7 @@ export const URL_path = {
     }
 
 };
+
 export const jsonHeader = {"Content-Type":"application/json",
 'Accept': '*/*'  }
 export const regUtils = {

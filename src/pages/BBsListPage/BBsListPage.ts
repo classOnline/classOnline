@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component  } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { AlertController} from 'ionic-angular';
@@ -12,8 +12,9 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'BBsListPage.html'
 })
 export class BBsListPage {
-  notelist=[];//数组
+  notelist=["","",""];//数组
   baseImgUrl:any;
+  strings=["asdasd","asdasdas"];
   constructor(public navCtrl: NavController,public storage: Storage, public alertCtrl: AlertController,public httpClient:HttpClient) {
    
     this.baseImgUrl = baseImgUrl;
@@ -60,14 +61,17 @@ export class BBsListPage {
     this.fetchNoteList(input);
   }
   fetchNoteList(name){
-    //取一下noteList
+    //取一下noteList;
+   
     return this.httpClient.post(URL_path.class.searchNoteList,{
       noteName:name
     },{
       headers:jsonHeader,
     }).toPromise().then((res:any)=>{
         if(res.result === true ){
+          console.log(  this.notelist );
           this.notelist = res.noteList;
+ 
           
         }else {
           let alert = this.alertCtrl.create({
