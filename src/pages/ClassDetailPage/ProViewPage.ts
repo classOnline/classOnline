@@ -140,9 +140,19 @@ export class PopoverPage {
 export class ProViewPage {
   @ViewChild('popoverContent', { read: ElementRef }) content: ElementRef;
   @ViewChild('popoverText', { read: ElementRef }) text: ElementRef;
-  des:any
+  chapterDetail={
+    desList:[
+      {
+        type:"txt",
+        content:""
+      },
+    ]
+  };
+  baseImgUrl:any;
   constructor(private popoverCtrl: PopoverController,public navCtrl:NavController,public navParams:NavParams) {
-   this.des= navParams.data
+    console.log( this.navParams.data)
+   this.chapterDetail= this.navParams.data.chapterDetail;
+   this.baseImgUrl= this.navParams.data.baseImgUrl;
   }
 
   presentPopover(ev) {
@@ -155,6 +165,8 @@ export class ProViewPage {
     });
     
   }
+  
+
   backTo() {
     this.navCtrl.pop();
   }

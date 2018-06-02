@@ -7,7 +7,8 @@ const baseBbsUrl = baseUrl + "bbs/";
 export const URL_path = {
     class: {
         getAllClassList: baseClassUrl + "getAllClassList/",
-        getClassStruct: baseClassUrl + "getClassStruct/",
+        getClassStruct: baseClassUrl + "getClassNewStruct/",
+        getChapterDetail:baseClassUrl + "getChapterDetail",
         getVideoDetails: baseClassUrl + "getVideoDetails/",
         searchVideos:baseClassUrl+"searchVideos/",
         commentToVideo:baseClassUrl+"commentToVideo",
@@ -21,6 +22,7 @@ export const URL_path = {
         searchNoteList:baseBbsUrl+"searchNoteList/",
         messageBox:baseBbsUrl+"messageBox/",
         getMessageBox:baseBbsUrl+"getMessageBox/"
+  
     },
     user: {
         login: baseUserUrl + "login/",
@@ -39,4 +41,16 @@ export const regUtils = {
     regEn: /[`~!@#$%^&*()_+<>?:"{},.\/;'[\]\s+\r+\n+]/im,
     regCn: /[·！#￥（——）：；“”‘、，|《。》？、【】[\]\s+\r+\n+]/im,
 
+}
+export const Conf = {
+    maxFileSize: 104587600,
+    allowedMimeType:['image/jpeg','image/png','application/msword',
+        'application/vnd.ms-excel','application/vnd.ms-powerpoint',
+        'audio/x-mpeg','video/mp4','audio/mpeg','audio/mp3',
+        'application/x-shockwave-flash','video/x-ms-asf',
+        'application/pdf',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        'application/vnd.openxmlformats-officedocument.presentationml.presentation'
+    ],
 }

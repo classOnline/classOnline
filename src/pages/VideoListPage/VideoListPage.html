@@ -14,23 +14,41 @@
       </button>
     </ion-buttons>
   </ion-toolbar>
+
 </ion-header>
 
 
-
-<ion-content class="" >
-  <ion-searchbar (ionInput)="ionInput($event)"></ion-searchbar>
-  <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
+<ion-content class="">
+    <ion-searchbar (ionInput)="ionInput($event)"></ion-searchbar>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
   <div *ngFor="let videoItem of videoList">
     <ion-card>
-      <ion-item>
+      <ion-item (click)="toVideoDetailPage(videoItem)">
         <h2>{{videoItem.name}}</h2>
       </ion-item>
-      <ion-card-content (click)="toVideoDetailPage(videoItem)">
-        <img src="{{baseImgUrl+videoItem.shortcut}}" />
-        <ion-icon name='md-arrow-dropright-circle'></ion-icon>
+      <ion-card-content >
+        <vg-player>
+          <vg-controls>
+            <vg-play-pause></vg-play-pause>
+
+            <vg-scrub-bar>
+              <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+              <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+            </vg-scrub-bar>
+
+            <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+
+            <vg-mute></vg-mute>
+
+            <vg-fullscreen></vg-fullscreen>
+          </vg-controls>
+
+          <video [vgMedia]="master" #master [vgMaster]="true" id="masterVideo" preload="auto">
+            <source src="{{baseImgUrl+videoItem.url}}" type="video/mp4">
+          </video>
+        </vg-player> 
       </ion-card-content>
       <ion-row>
         <ion-col>

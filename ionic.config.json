@@ -19,9 +19,14 @@
       "proxyUrl": "http://localhost:3000/class/getAllClassList"
     },
     {
-      "path": "/class/getClassStruct",
-      "proxyUrl": "http://localhost:3000/class/getClassStruct"
+      "path": "/class/getClassNewStruct",
+      "proxyUrl": "http://localhost:3000/class/getClassNewStruct"
     },
+    {
+      "path": "/class/getChapterDetail",
+      "proxyUrl": "http://localhost:3000/class/getChapterDetail"
+    },
+    
     {
       "path": "/class/getVideoDetails",
       "proxyUrl": "http://localhost:3000/class/getVideoDetails"
