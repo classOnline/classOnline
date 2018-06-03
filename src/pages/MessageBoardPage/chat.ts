@@ -113,6 +113,9 @@ export class Chat {
             //这里的已经是list了
          
             if(newListResult.length>0){
+              if(newListResult[newListResult.length-1]._id ===this.lastId){
+                return ;
+              }
               this.msgList= this.msgList.concat(newListResult);
               this.lastId = this.msgList.length>0? this.msgList[this.msgList.length-1]._id:"";//更新id
               this.scrollToBottom();

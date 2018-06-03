@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button (click)="backTo()">
+        <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      video
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-content padding>
+    <form>
+
+    </form>
+    <input type="file" style="display: none;" #videoInput id="videoInput" [(ngModel)]='fileUrl' (input)='uploadVideo($event)'
+    />
+    <ion-item>
+
+      <ion-input type="text" [(ngModel)]="name" placeholder="the video name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Ref a class</ion-label>
+      <ion-select [(ngModel)]="classId">
+        <ion-option *ngFor="let theClass of classList" value="{{theClass._id}}">{{theClass.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <button ion-button block (click)="pickUpVideo()">pickUp</button>
+
+  </ion-content>
+</ion-content>

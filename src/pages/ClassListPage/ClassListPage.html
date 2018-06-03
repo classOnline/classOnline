@@ -1,8 +1,14 @@
+<ion-fab right top>
+  <button ion-fab (click)="toUploadVideo()">
+    <ion-icon name="md-create"></ion-icon>
+  </button>
+</ion-fab>
 <ion-content class='card-background-page' *ngFor="let clas of classList">
+  
   <ion-card (click)="toClassVieoList(clas._id)">
     <img src="{{baseImgUrl+clas.imgUrl}}" />
     <div class="card-title">{{clas.name}}</div>
     <div class="card-subtitle">{{clas.videos}} videos</div>
   </ion-card>
-
-</ion-content>
+ 
+</ion-content>   

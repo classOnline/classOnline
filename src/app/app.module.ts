@@ -37,7 +37,7 @@ import {VgOverlayPlayModule} from 'videogular2/overlay-play';
 import {VgBufferingModule} from 'videogular2/buffering';
 import {VideoListPage} from "../pages/VideoListPage/VideoListPage"
 import {NodeCommentPage} from "../pages/CommentListPage/NodeCommentPage"
-
+import {UploadVideoPage} from "../pages/UploadVideoPage/UploadVideoPage"
 import {ProViewPage,PopoverPage} from "../pages/ClassDetailPage/ProViewPage"
 import {  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -62,7 +62,8 @@ import { CommonModule } from '@angular/common';
     VideoListPage,
     ProViewPage,
     PopoverPage,
-    NodeCommentPage
+    NodeCommentPage,
+    UploadVideoPage
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -99,7 +100,7 @@ import { CommonModule } from '@angular/common';
     ClassListPage,
     BBsListPage,
     CommentListPage,
-    TabsPage,
+    TabsPage,    
     Chat,
     RegisterPage,
     ClassDetailPage,
@@ -110,7 +111,8 @@ import { CommonModule } from '@angular/common';
     VideoListPage,
     ProViewPage,
     PopoverPage,
-    NodeCommentPage
+    NodeCommentPage,
+    UploadVideoPage
 
   ],
   providers: [
@@ -121,7 +123,9 @@ import { CommonModule } from '@angular/common';
     ChatService,
     HTTP,
     StreamingMedia,
-    VideoPlayer
+    VideoPlayer,
+
+
   ]
 })
 export class AppModule { }

@@ -1,9 +1,10 @@
 
 const baseUrl = "/";
-export const baseImgUrl = "http://10.209.8.116:3000/";//可以跨域
+export const baseImgUrl = "http://localhost:3000/"; //可以跨域
 const baseClassUrl = baseUrl + "class/";
 const baseUserUrl = baseUrl + "users/";
 const baseBbsUrl = baseUrl + "bbs/";
+const baseUploadUrl = baseUrl + "upload/";
 export const URL_path = {
     class: {
         getAllClassList: baseClassUrl + "getAllClassList/",
@@ -12,7 +13,7 @@ export const URL_path = {
         getVideoDetails: baseClassUrl + "getVideoDetails/",
         searchVideos:baseClassUrl+"searchVideos/",
         commentToVideo:baseClassUrl+"commentToVideo",
-
+        getAllClassNames:baseClassUrl+"getAllClassNames/",
 
         submitNote:baseBbsUrl+"submitNote/",
         commentToNote:baseBbsUrl+"commentToNote/",
@@ -21,8 +22,9 @@ export const URL_path = {
         getNoteDetail:baseBbsUrl+"getNoteDetail/",
         searchNoteList:baseBbsUrl+"searchNoteList/",
         messageBox:baseBbsUrl+"messageBox/",
-        getMessageBox:baseBbsUrl+"getMessageBox/"
-  
+        getMessageBox:baseBbsUrl+"getMessageBox/",
+   
+        uploadVideo:baseUploadUrl+"uploadVideo/"
     },
     user: {
         login: baseUserUrl + "login/",
@@ -32,6 +34,8 @@ export const URL_path = {
 };
 
 export const jsonHeader = {"Content-Type":"application/json",
+'Accept': '*/*'  }
+export const fileHeader = {"Content-Type":"false",
 'Accept': '*/*'  }
 export const regUtils = {
 
@@ -47,7 +51,7 @@ export const Conf = {
     allowedMimeType:['image/jpeg','image/png','application/msword',
         'application/vnd.ms-excel','application/vnd.ms-powerpoint',
         'audio/x-mpeg','video/mp4','audio/mpeg','audio/mp3',
-        'application/x-shockwave-flash','video/x-ms-asf',
+        'application/x-shockwave-flash','video/x-ms-asf', 
         'application/pdf',
         'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
         'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',

@@ -26,7 +26,6 @@
       "path": "/class/getChapterDetail",
       "proxyUrl": "http://localhost:3000/class/getChapterDetail"
     },
-    
     {
       "path": "/class/getVideoDetails",
       "proxyUrl": "http://localhost:3000/class/getVideoDetails"
@@ -38,6 +37,10 @@
     {
       "path": "/class/commentToVideo",
       "proxyUrl": "http://localhost:3000/class/commentToVideo"
+    },
+    {
+      "path": "/class/getAllClassNames",
+      "proxyUrl": "http://localhost:3000/class/getAllClassNames"
     },
     {
       "path": "/public/*",
@@ -74,7 +77,11 @@
     {
       "path": "/bbs/getMessageBox",
       "proxyUrl": "http://localhost:3000/bbs/getMessageBox"
+    },
+    {
+      "path": "/upload/uploadVideo/",
+      "proxyUrl": "http://localhost:3000/upload/uploadVideo"
     }
-     
+
   ]
 }

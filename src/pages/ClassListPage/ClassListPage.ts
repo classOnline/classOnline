@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController ,AlertController,IonicPage} from 'ionic-angular';
 import {VideoListPage} from "../VideoListPage/VideoListPage";
+import {UploadVideoPage} from "../UploadVideoPage/UploadVideoPage";
 import { HttpClient } from "@angular/common/http";
 import { URL_path, jsonHeader, regUtils ,baseImgUrl} from '../../util/Constants'
 
@@ -15,7 +16,7 @@ export class ClassListPage {
   constructor(public navCtrl: NavController,public httpClient:HttpClient, public alertCtrl: AlertController) {
       this.baseImgUrl  = baseImgUrl;
      
-     this.fetchClassList();
+      this.fetchClassList();
   }
 
   fetchClassList(){
@@ -49,6 +50,10 @@ export class ClassListPage {
       alert.present();
     })
 
+    
+  }
+  toUploadVideo(){
+    this.navCtrl.push(UploadVideoPage,{classId:1});//吧课程id 传下去
 
   }
   toClassVieoList(id){
