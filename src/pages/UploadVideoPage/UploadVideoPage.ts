@@ -114,7 +114,7 @@ export class UploadVideoPage {
       });
       
       this.http.request(httpRequest).subscribe(
-        (event) => {
+        (event:any) => {
           console.log(event.type)
           if(event.type == 0){
               //为0，开始上传

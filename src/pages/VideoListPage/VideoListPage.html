@@ -23,7 +23,7 @@
     <ion-refresher (ionRefresh)="doRefresh($event)">
       <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
-  <div *ngFor="let videoItem of videoList">
+  <div *ngFor="let videoItem of videoList;let i = index">
     <ion-card>
       <ion-item (click)="toVideoDetailPage(videoItem)">
         <h2>{{videoItem.name}}</h2>
@@ -52,7 +52,7 @@
       </ion-card-content>
       <ion-row>
         <ion-col>
-          <button ion-button color="primary" clear small icon-start>
+          <button ion-button color="primary" clear small icon-start (click)="supportOrUnSupport(videoItem._id,i,0,0)">
             <ion-icon name='thumbs-up'></ion-icon>
             {{videoItem.stars}} like
           </button>

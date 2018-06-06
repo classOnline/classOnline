@@ -5,6 +5,7 @@ const baseClassUrl = baseUrl + "class/";
 const baseUserUrl = baseUrl + "users/";
 const baseBbsUrl = baseUrl + "bbs/";
 const baseUploadUrl = baseUrl + "upload/";
+export  const starsTargets=['video','class','note','videoComment','noteComment'];
 export const URL_path = {
     class: {
         getAllClassList: baseClassUrl + "getAllClassList/",
@@ -14,6 +15,8 @@ export const URL_path = {
         searchVideos:baseClassUrl+"searchVideos/",
         commentToVideo:baseClassUrl+"commentToVideo",
         getAllClassNames:baseClassUrl+"getAllClassNames/",
+        supportThis:baseClassUrl+"supportThis/",
+        Insertviews:baseClassUrl+"Insertviews/",
 
         submitNote:baseBbsUrl+"submitNote/",
         commentToNote:baseBbsUrl+"commentToNote/",
@@ -23,7 +26,7 @@ export const URL_path = {
         searchNoteList:baseBbsUrl+"searchNoteList/",
         messageBox:baseBbsUrl+"messageBox/",
         getMessageBox:baseBbsUrl+"getMessageBox/",
-   
+      
         uploadVideo:baseUploadUrl+"uploadVideo/"
     },
     user: {

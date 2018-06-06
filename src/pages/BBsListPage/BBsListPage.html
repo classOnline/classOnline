@@ -15,19 +15,19 @@
       <ion-icon name="md-create"></ion-icon>
     </button>
   </ion-fab>
-  <ion-card *ngFor="let thisNote of notelist" (click)="toCommentListPage(thisNote)" >
-    <ion-item>
+  <ion-card *ngFor="let thisNote of notelist;let i = index" >
+    <ion-item  (click)="toCommentListPage(thisNote)" >
       <ion-avatar item-start>
         <img src="{{thisNote.userId.imgUrl}}">
       </ion-avatar>
       <h2>{{thisNote.userId.userName}}</h2>
       <h2>{{thisNote.title}}</h2>
     </ion-item>
-    <ion-item style="text-align: center">
+    <ion-item style="text-align: center" >
 
      
     </ion-item>
-    <ion-card-content>
+    <ion-card-content  (click)="toCommentListPage(thisNote)" >
       <p>{{thisNote.des}}</p>
 
     </ion-card-content>
@@ -36,21 +36,21 @@
         <span class="subject">#{{thisSubject.name}}#</span>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row>    
       <ion-col>
-        <button ion-button color="primary" clear small icon-start>
+        <button ion-button color="primary" clear small icon-start  (click)="supportOrUnSupport(thisNote._id,i,2,0)">
           <ion-icon name='thumbs-up'></ion-icon>
           {{thisNote.stars}} Likes
         </button>
       </ion-col>
       <ion-col>
-        <button ion-button color="primary" clear small icon-start>
+        <button ion-button color="primary" clear small icon-start (click)="toCommentListPage(thisNote)" >
           <ion-icon name='text'></ion-icon>
           {{thisNote.commentList.length}} Comments
         </button>
       </ion-col>
     </ion-row>
-  </ion-card>
+  </ion-card> 
 
 
 

@@ -38,7 +38,7 @@
       </ion-row>
       <ion-row>
         <ion-col>
-          <button ion-button color="primary" clear small icon-start>
+          <button ion-button color="primary" clear small icon-start (click)="supportOrUnSupport(note._id,-1,2,0)" >
             <ion-icon name='thumbs-up'></ion-icon>
             {{note.stars}} Likes
           </button>
@@ -51,7 +51,7 @@
         <ion-refresher-content></ion-refresher-content>
       </ion-refresher>
 
-      <div class="oneComment" *ngFor="let comment of note.commentList">
+      <div class="oneComment" *ngFor="let comment of note.commentList;let i = index">
         <ion-item>
           <ion-avatar item-start>
             <img src="{{comment.userId.imgUrl}}" />
@@ -62,9 +62,18 @@
             <p>{{comment.des}}</p>
         </ion-card-content>
 
-        <ion-item class="iconRow" >
-            <ion-icon name='thumbs-up'></ion-icon>
-            <ion-icon (click)="commentTo(comment.userId)" name='ios-text'></ion-icon>
+        <ion-item  > 
+            <ion-col>
+                <button ion-button color="primary" clear small icon-start  (click)="supportOrUnSupport(comment._id,i,4,0)">
+                  <ion-icon name='thumbs-up'></ion-icon>
+                  {{comment.stars}} LIKE 
+                </button>
+           </ion-col>
+           <ion-col>
+              <button ion-button color="primary" clear small icon-start  (click)="commentTo(comment.userId)">
+                <ion-icon name='ios-text'></ion-icon>
+              </button>
+          </ion-col>
         </ion-item>
       </div>
     </ion-list>
