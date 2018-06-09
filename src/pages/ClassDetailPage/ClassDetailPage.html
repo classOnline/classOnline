@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-navbar>
     <ion-buttons start>
       <button ion-button (click)="backTo()">
         <span ion-text color="primary" showWhen="ios">Cancel</span>
@@ -9,7 +9,7 @@
     <ion-title>
       {{classStruct.name}}
     </ion-title>
-  </ion-toolbar>
+  </ion-navbar>
 </ion-header>
 
 <ion-content>
@@ -21,7 +21,7 @@
           <ion-avatar item-start>
             <img src="{{baseImgUrl+chapter.imgUrl}}" style="border-radius: 1em;height: 10vh;width: 10vh;">
           </ion-avatar>
-          <h1 style="color: #ffffff">第{{i}}章:{{chapter.name}}</h1>
+          <h1 style="color: #ffffff">第{{i+1}}章:{{chapter.name}}</h1>
         </ion-item>
       </ion-card-content>
     </ion-card>
