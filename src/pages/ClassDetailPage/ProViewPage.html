@@ -19,9 +19,12 @@
 
 <ion-content #popoverContent padding class="popover-page">
   <div #popoverText class="text-to-change" *ngFor="let desReg of chapterDetail.desList">
+      <div *ngIf="desReg.type === 'title'">
+          <h2>{{desReg.content}}</h2>
+        </div>
     <div *ngIf="desReg.type === 'txt'">
       <p>{{desReg.content}}</p>
-    </div>
+    </div> 
     <div *ngIf="desReg.type === 'image'">
         <img [src] = "baseImgUrl+desReg.content">
     </div>

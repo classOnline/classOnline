@@ -13,7 +13,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-list no-border *ngFor="let chapter of chapters" (click)="toChapterDes(chapter._id)">
+  <ion-list no-border *ngFor="let chapter of chapters;let i = index" (click)="toChapterDes(chapter._id)">
     <ion-card style="border-radius: 1em" >
 
       <ion-card-content style="background-color: #76a0e8;padding-left: 0"  >
@@ -21,7 +21,7 @@
           <ion-avatar item-start>
             <img src="{{baseImgUrl+chapter.imgUrl}}" style="border-radius: 1em;height: 10vh;width: 10vh;">
           </ion-avatar>
-          <h1 style="color: #ffffff">Chapter1:{{chapter.name}}</h1>
+          <h1 style="color: #ffffff">第{{i}}章:{{chapter.name}}</h1>
         </ion-item>
       </ion-card-content>
     </ion-card>

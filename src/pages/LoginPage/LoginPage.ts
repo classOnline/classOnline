@@ -127,10 +127,11 @@ export class RegisterPage {
     if (username.trim() === "" || password1.trim() === "" || password2.trim() === "" || this.imgIndex  === -1) {
       let alert = this.alertCtrl.create({
         title: 'Opss',
-        subTitle: 'username and password cannot be empty!',
+        subTitle: 'username and password and image cannot be empty!',
         buttons: ['OK'],
       });
       alert.present();
+      return;
     }
     else if (password1 !== password2) {
       let alert = this.alertCtrl.create({
