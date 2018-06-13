@@ -39,7 +39,7 @@ export class UploadVideoPage {
     });
     this.videoInputEle.nativeElement.addEventListener('input', (event) => {
       console.log('input')
-      this.uploadVideo(event);
+      //this.uploadVideo(event);
 
     });
     // Do something with 'event'
@@ -97,10 +97,6 @@ export class UploadVideoPage {
       });
       alert.present();
       return;
-
-    }
-    if (this.platform.is('android')) {
-      //在android 上进行上传
 
     } else {
       //在browser上进行上传
